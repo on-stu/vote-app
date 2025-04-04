@@ -1,14 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { supabase } from "@/utils/supabase";
 
 export default function VotePage() {
   const [loading, setLoading] = useState(false);
   const [voteSubmitted, setVoteSubmitted] = useState(false);
-  const router = useRouter();
 
   async function submitVote(value: "yes" | "no") {
     setLoading(true);
